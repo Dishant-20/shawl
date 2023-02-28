@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "678914657887",
+    "project_id": "my-new-shawl",
+    "storage_bucket": "my-new-shawl.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678914657887:android:b67b7707a7ba407c4355ea",
+        "android_client_info": {
+          "package_name": "com.shawl.production"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678914657887-n3akoguq3nnpf4858ocenarj0s56aaki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW-kR4uOQ5yve9uJ1AlrZ9wirlH9I-ReQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678914657887-n3akoguq3nnpf4858ocenarj0s56aaki.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "678914657887-t4rj6spokqqn1bgt91s37i6batgs0sc5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.shawl"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678914657887:android:b67b7707a7ba407c4355ea",
+        "android_client_info": {
+          "package_name": "com.shawl.production"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678914657887-n3akoguq3nnpf4858ocenarj0s56aaki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBW-kR4uOQ5yve9uJ1AlrZ9wirlH9I-ReQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678914657887-n3akoguq3nnpf4858ocenarj0s56aaki.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "678914657887-t4rj6spokqqn1bgt91s37i6batgs0sc5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.shawl"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
