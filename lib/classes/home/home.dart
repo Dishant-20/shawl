@@ -36,102 +36,87 @@ class _HomeScreenState extends State<HomeScreen> {
   //
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: PageView(
-        controller: _pageController,
-        physics: const NeverScrollableScrollPhysics(),
-        children: List.generate(
-          bottomBarPages.length,
-          (index) => bottomBarPages[index],
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: Scaffold(
+        body: PageView(
+          controller: _pageController,
+          physics: const NeverScrollableScrollPhysics(),
+          children: List.generate(
+            bottomBarPages.length,
+            (index) => bottomBarPages[index],
+          ),
         ),
-      ),
-      extendBody: true,
-      bottomNavigationBar: (bottomBarPages.length <= maxCount)
-          ? AnimatedNotchBottomBar(
-              pageController: _pageController,
-              color: Colors.white,
-              showLabel: true,
-              notchColor: Colors.white,
-              bottomBarItems: const [
-                BottomBarItem(
+        extendBody: true,
+        bottomNavigationBar: (bottomBarPages.length <= maxCount)
+            ? AnimatedNotchBottomBar(
+                pageController: _pageController,
+                color: const Color.fromRGBO(
+                  166, //88,
+                  247, //56,
+                  235, //30,
+                  1,
+                ),
+                showLabel: true,
+                notchColor: const Color.fromRGBO(
+                  166, //243, //237,
+                  247, //203, //164,
+                  235, //217, //203,
+                  1,
+                ),
+                bottomBarItems: const [
+                  BottomBarItem(
                     inActiveItem: Icon(
                       Icons.home_filled,
                       color: Colors.black12,
                     ),
                     activeItem: Icon(
                       Icons.home_filled,
+                      color: Color.fromRGBO(
+                        108,
+                        216,
+                        238,
+                        1,
+                      ),
+                    ),
+                    itemLabel: 'Home',
+                  ),
+                  BottomBarItem(
+                    inActiveItem: Icon(
+                      Icons.star,
+                      color: Colors.black12,
+                    ),
+                    activeItem: Icon(
+                      Icons.star,
                       color: Colors.black,
                     ),
-                    itemLabel: 'Home'),
-                BottomBarItem(
-                  inActiveItem: Icon(
-                    Icons.star,
-                    color: Colors.black12,
+                    itemLabel: 'Page 2',
                   ),
-                  activeItem: Icon(
-                    Icons.star,
-                    color: Colors.black,
+                  BottomBarItem(
+                    inActiveItem: Icon(
+                      Icons.person,
+                      color: Colors.black12,
+                    ),
+                    activeItem: Icon(
+                      Icons.person,
+                      color: Colors.black,
+                    ),
+                    itemLabel: 'Page 5',
                   ),
-                  itemLabel: 'Page 2',
-                ),
-                BottomBarItem(
-                  inActiveItem: Icon(
-                    Icons.person,
-                    color: Colors.black12,
-                  ),
-                  activeItem: Icon(
-                    Icons.person,
-                    color: Colors.black,
-                  ),
-                  itemLabel: 'Page 5',
-                ),
-
-                ///svg example
-                // BottomBarItem(
-                //   inActiveItem: Image.asset(
-                //     'assets/search_icon.svg',
-                //     color: Colors.blueGrey,
-                //   ),
-                //   activeItem: Image.asset(
-                //     'assets/search_icon.svg',
-                //     color: Colors.white,
-                //   ),
-                //   itemLabel: 'Page 3',
-                // ),
-                /*
-                BottomBarItem(
-                  inActiveItem: Icon(
-                    Icons.settings,
-                    color: Colors.blueGrey,
-                  ),
-                  activeItem: Icon(
-                    Icons.settings,
-                    color: Colors.pink,
-                  ),
-                  itemLabel: 'Page 4',
-                ),
-                BottomBarItem(
-                  inActiveItem: Icon(
-                    Icons.person,
-                    color: Colors.blueGrey,
-                  ),
-                  activeItem: Icon(
-                    Icons.person,
-                    color: Colors.yellow,
-                  ),
-                  itemLabel: 'Page 5',
-                ),*/
-              ],
-              onTap: (index) {
-                /// control your animation using page controller
-                _pageController.animateToPage(
-                  index,
-                  duration: const Duration(milliseconds: 200),
-                  curve: Curves.easeIn,
-                );
-              },
-            )
-          : null,
+                ],
+                onTap: (index) {
+                  /// control your animation using page controller
+                  _pageController.animateToPage(
+                    index,
+                    duration: const Duration(milliseconds: 200),
+                    curve: Curves.easeIn,
+                  );
+                },
+              )
+            : null,
+      ),
     );
   }
 }
