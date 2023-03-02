@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
+import 'package:shawl/classes/home/feeds/feeds_details/feeds_details.dart';
 import 'package:shawl/headers/appbar/appbar.dart';
 import 'package:shawl/headers/utils/utils.dart';
 
@@ -21,7 +22,10 @@ class _FeedsScreenState extends State<FeedsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBarScreen(),
+      appBar: AppBarScreen(
+        bool_back_hide: false,
+        str_navigation_title: 'Home',
+      ),
       body: Container(
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
@@ -113,6 +117,14 @@ class _FeedsScreenState extends State<FeedsScreen> {
                       if (kDebugMode) {
                         print('call hit');
                       }
+                      //
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const FeedsDetailsScreen(),
+                        ),
+                      );
+                      //
                     },
                     child: Container(
                       padding: const EdgeInsets.all(10),

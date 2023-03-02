@@ -41,6 +41,23 @@ class _HomeScreenState extends State<HomeScreen> {
         return false;
       },
       child: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            if (kDebugMode) {
+              print('clicked on floating button');
+            }
+          },
+          backgroundColor: const Color.fromRGBO(
+            166, //88,
+            247, //56,
+            235, //30,
+            1,
+          ),
+          child: const Icon(
+            Icons.edit_note_rounded,
+            color: Colors.black,
+          ),
+        ),
         body: PageView(
           controller: _pageController,
           physics: const NeverScrollableScrollPhysics(),
